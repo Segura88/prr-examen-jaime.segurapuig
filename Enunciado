@@ -1,0 +1,27 @@
+Examen Práctico - Programación en Red
+Implemente una abstracción (clase, módulo, etc.) que genere los mensajes y sus respuestas adecuadas (tanto la parte cliente como la parte servidor) definidos en la especificación de requisitos, utilizando la metodología TDD.
+
+La puntuación se asignará a diferentes entregas realizadas en el repositorio con las siguientes condiciones:
+
+a) Entregas etiquetadas como "Test n". Deberán contener un caso de prueba que sea el único que no funcione de dicha entrega. Es necesario que los casos de prueba de las diferentes entregas sean funcionalmente distintos. Los casos de prueba deberán tratar de cubrir todas las situaciones especificadas en los requisitos. Cada caso de prueba funcionalmente distinto y adecuado a los requisitos del enunciado que sea ejecutado correctamente por el software sumará 0,2 puntos. Puede escribir todos los casos de prueba que estime oportunos (máximo 1 punto).  
+
+b) Entregas etiquetadas como "Test n OK". Deberán hacer funcionar un caso de prueba que fallaba en la entrega anterior. Cada una de estas entregas sumará 0,2 puntos siempre que todos los casos de prueba acumulados funcionen (máximo 1 punto).  
+
+c) Entregas etiquetadas como "Refactor n". Deberán contener una recodificación (refactoring) del código, diferenciándose de la entrega anterior solamente en dicha recodificación pero no en los casos de prueba, que deberán ser los mismos de la entrega anterior. Sumarán 0,2 puntos si todos los casos de prueba funcionan (máximo 4 puntos).
+
+Implemente el servidor del sistema especificado en los requisitos. El servidor deberá ejecutarse de forma continua, sin detenerse y deberá aceptar conexiones de cualquier cliente, recibiendo los mensajes indicados y generando las respuestas adecuadas. Se sugiere el uso de la abstracción desarrollada en la pregunta anterior. Etiquete "Servidor" a la entrega que contiene la solución (1.5 puntos). Implemente el cliente del sistema especificado en los requisitos. El cliente deberá conectarse automáticamente a la dirección del servidor especificada en los requisitos, enviar un mínimo de 3 mensajes al servidor, y debe desconectarse correctamente. El cliente deberá imprimir en su salida estándar las respuestas del servidor (o cualquier error que se produzca) y terminar tras el último mensaje. Se sugiere el uso de la abstracción desarrollada hace 2 preguntas. Etiquete "Cliente" a la entrega que contiene la solución. Modifique el servidor para que imprima en el error standard una línea cada vez que recibe la conexión de un cliente, imprimiendo la dirección IP del mismo y el mensaje que le ha hecho llegar. Etiquete "Servidor modificado" a la entrega que contiene la solución. Modifique el cliente para que pregunte al usuario por la dirección completa del servidor e imprima un error si no consigue realizar la conexión. Etiquete "Cliente modificado" a la entrega que contiene la solución. Anote en el fichero README el puerto de escucha que ha elegido para el servidor así como el procedimiento y las herramientas necesarias para ejecutar el código de las respuestas anteriores: Sistema operativo, herramientas de programación, construcción, scripts...  
+
+ESPECIFICACIÓN DE REQUISITOS:
+Se desea implementar un sistema cliente-servidor para realizar las tareas que se describen a continuación. Para ello se necesitan un protocolo de mensajes, un cliente y un servidor.
+
+El cliente deberá realizar una conexión TCP al puerto del servidor, en la que debe enviar un mensaje de los que se describen a continuación; una vez enviado el mensaje, esperará una respuesta del servidor por dicha conexión TCP, respuesta que deberá imprimir en su salida standard, pudiendo terminar una vez recibida e impresa dicha respuesta.
+
+El servidor atenderá peticiones en el puerto TCP 11000 + 40 + 5. Deberá ejecutarse de forma continua, sin detenerse y deberá aceptar indefinidamente conexiones TCP de cualquier cliente; cada vez que reciba un comando de un cliente, deberá calcular la respuesta devolviéndola por la conexión establecida con dicho cliente, y acto seguido deberá cerrar la conexión con ese cliente.
+
+El servidor responderá a los siguientes mensajes de texto, enviados desde el cliente, con las respuestas a continuación:
+
+INVERTIR:Frase --> El servidor responderá con la misma frase pero con los caracteres en orden inverso. (Ejemplo: Si recibe INVERTIR:hola red, responderá der aloh).
+
+VOCALES:Frase --> El servidor responderá con el número total de vocales (a, e, i, o, u, sin importar si son mayúsculas o minúsculas) que contiene la frase, con el formato VOCALES:numero. (Ejemplo: Si recibe VOCALES:Examen final, responderá VOCALES:5).
+
+Cualquier otro mensaje --> El servidor devolverá ERROR.
