@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Examen Práctico - Programación en Red</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: #f9f9f9;
+        }
+        .container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .header {
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+        .header h1 {
+            color: #0056b3;
+            margin: 0;
+            font-size: 24px;
+            text-transform: uppercase;
+        }
+        .header h2 {
+            color: #555;
+            margin: 5px 0 0 0;
+            font-size: 16px;
+            font-weight: normal;
+        }
+        .student-info {
+            background-color: #eef5f9;
+            border-left: 4px solid #0056b3;
+            padding: 15px;
+            margin-bottom: 30px;
+        }
+        .student-info p {
+            margin: 5px 0;
+            font-weight: bold;
+        }
+        h3 {
+            color: #0056b3;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        .code-block {
+            background-color: #272822;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+            overflow-x: auto;
+            margin-bottom: 20px;
+        }
+        .inline-code {
+            background-color: #f1f1f1;
+            color: #d14;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: Consolas, Monaco, monospace;
+            font-size: 0.9em;
+        }
+        ul, ol {
+            margin-bottom: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+            text-align: justify;
+        }
+        .requirements {
+            background-color: #fffbdd;
+            border: 1px solid #e5d97c;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 30px;
+        }
+        .requirements h3 {
+            color: #8a6d3b;
+            border-bottom-color: #e5d97c;
+            margin-top: 0;
+        }
+        .badge {
+            background-color: #0056b3;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            vertical-align: middle;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Examen Práctico: Desarrollo de Protocolos de Aplicación</h1>
+            <h2>Asignatura: Programación en Red | Simulacro Técnico</h2>
+        </div>
+
+        <div class="student-info">
+            <p>Alumno/a: Gabriela Rodríguez Camacho</p>
+            <p>Repositorio asignado: prr-examen-gabriela.rodriguezcamacho</p>
+        </div>
+
+        <h3>1. Clonación y Configuración del Repositorio Git</h3>
+        <p>Abra una terminal en su puesto de trabajo y ejecute los comandos necesarios para clonar el repositorio remoto provisto para su entrega. El sistema registrará todas sus entregas de forma automatizada en este entorno.</p>
+        <div class="code-block">
+git clone https://github.com/Segura88/prr-examen-gabriela.rodriguezcamacho.git
+        </div>
+
+        <h3>2. Desarrollo Basado en Pruebas (TDD) <span class="badge">Máx. 6.0 Puntos</span></h3>
+        <p>Implemente una abstracción (clase o módulo independiente) que se encargue de la generación de los mensajes del protocolo y sus correspondientes respuestas (tanto para la lógica del cliente como la del servidor) detallados en la especificación técnica. Es <strong>obligatorio</strong> utilizar la metodología TDD. La puntuación se asignará a diferentes entregas realizadas en el repositorio con las siguientes condiciones:</p>
+        <ul>
+            <li><strong>a) Entregas etiquetadas como <span class="inline-code">"Test n"</span>:</strong> Deberán contener un caso de prueba que sea el único que no funcione de dicha entrega. Es necesario que los casos de prueba de las diferentes entregas sean funcionalmente distintos y traten de cubrir todas las situaciones especificadas. Cada caso de prueba funcionalmente distinto ejecutado correctamente sumará 0,2 puntos (máximo 1 punto).</li>
+            <li><strong>b) Entregas etiquetadas como <span class="inline-code">"Test n OK"</span>:</strong> Deberán hacer funcionar un caso de prueba que fallaba en la entrega anterior. Cada una de estas entregas sumará 0,2 puntos siempre que todos los casos de prueba acumulados funcionen (máximo 1 punto).</li>
+            <li><strong>c) Entregas etiquetadas como <span class="inline-code">"Refactor n"</span>:</strong> Deberán contener una recodificación (refactoring) del código, diferenciándose de la entrega anterior solamente en dicha recodificación pero no en los casos de prueba, que deberán ser los mismos. Sumarán 0,2 puntos si todos los casos de prueba funcionan (máximo 4 puntos).</li>
+        </ul>
+
+        <h3>3. Implementación del Servidor <span class="badge">1.5 Puntos</span></h3>
+        <p>Implemente el servidor del sistema especificado en los requisitos. El servidor deberá ejecutarse de forma continua, sin detenerse y deberá aceptar conexiones de cualquier cliente, recibiendo los mensajes indicados y generando las respuestas adecuadas. Se sugiere el uso de la abstracción desarrollada en la pregunta anterior. Etiquete <span class="inline-code">"Servidor"</span> a la entrega que contiene la solución.</p>
+
+        <h3>4. Implementación del Cliente <span class="badge">1.0 Punto</span></h3>
+        <p>Implemente el cliente del sistema especificado en los requisitos. El cliente deberá conectarse automáticamente a la dirección del servidor especificada, enviar un mínimo de 3 mensajes al servidor, y debe desconectarse correctamente. El cliente deberá imprimir en su salida estándar las respuestas del servidor (o cualquier error que se produzca) y terminar tras el último mensaje. Etiquete <span class="inline-code">"Cliente"</span> a la entrega que contiene la solución.</p>
+
+        <h3>5. Modificaciones del Sistema <span class="badge">1.5 Puntos</span></h3>
+        <p>Deberá realizar las siguientes ampliaciones sobre el sistema base construido:</p>
+        <ul>
+            <li>Modifique el servidor para que imprima en el error estándar una línea cada vez que recibe la conexión de un cliente, imprimiendo la dirección IP del mismo y el mensaje que le ha hecho llegar. Etiquete <span class="inline-code">"Servidor modificado"</span> a la entrega que contiene la solución.</li>
+            <li>Modifique el cliente para que pregunte al usuario por la dirección completa del servidor e imprima un error si no consigue realizar la conexión. Etiquete <span class="inline-code">"Cliente modificado"</span> a la entrega que contiene la solución.</li>
+        </ul>
+
+        <h3>6. Documentación Técnica</h3>
+        <p>Anote en el fichero <span class="inline-code">README.md</span> el puerto de escucha que ha elegido para el servidor, así como el procedimiento y las herramientas necesarias para ejecutar el código de las respuestas anteriores (Sistema operativo, herramientas de programación, construcción, scripts...).</p>
+
+        <div class="requirements">
+            <h3>Especificación de Requisitos (Anexo de Protocolo)</h3>
+            <p>Se desea implementar un sistema cliente-servidor para realizar las tareas que se describen a continuación. Para ello se necesitan un protocolo de mensajes, un cliente y un servidor TCP.</p>
+            
+            <p><strong>Configuración de red:</strong> El servidor atenderá peticiones en el puerto TCP 11000 + 10 * numero de grupo  + numero de integrante del grupo. Deberá ejecutarse de forma continua, aceptar conexiones TCP indefinidamente, procesar la respuesta y cerrar la conexión con ese cliente inmediatamente después de enviar dicha respuesta.</p>
+
+            <p>El servidor responderá a los siguientes mensajes de texto (strings UTF-8 finalizados con salto de línea) enviados desde el cliente:</p>
+            <ol>
+                <li>
+                    <strong><span class="inline-code">INVERTIR:Frase</span></strong> &rarr; El servidor responderá con la misma frase pero con los caracteres en orden inverso. 
+                    <br><em>(Ejemplo: Si recibe <span class="inline-code">INVERTIR:hola red</span>, responderá <span class="inline-code">der aloh</span>)</em>.
+                </li>
+                <li>
+                    <strong><span class="inline-code">VOCALES:Frase</span></strong> &rarr; El servidor responderá con el número total de vocales (a, e, i, o, u, sin importar si son mayúsculas o minúsculas) que contiene la frase, con el formato <span class="inline-code">VOCALES:numero</span>. 
+                    <br><em>(Ejemplo: Si recibe <span class="inline-code">VOCALES:Examen final</span>, responderá <span class="inline-code">VOCALES:5</span>)</em>.
+                </li>
+                <li>
+                    <strong>Cualquier otro mensaje</strong> &rarr; El servidor devolverá obligatoriamente la cadena <span class="inline-code">ERROR</span>.
+                </li>
+            </ol>
+        </div>
+
+    </div>
+</body>
+</html>
