@@ -50,3 +50,6 @@ class Test(unittest.TestCase):
     def test_invertir_caracteres_especiales(self):
         self.assertEqual(procesar_mensaje("INVERTIR: !@#$%"), "%$#@!")
 
+    def test_invertir_en_minusculas(self):
+        self.assertEqual(procesar_mensaje("invertir: hola mundo"), "ERROR")
+
