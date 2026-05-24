@@ -43,3 +43,6 @@ class Test(unittest.TestCase):
 
     def test_vocales_vacio(self):
         self.assertEqual(procesar_mensaje("VOCALES: "), "VOCALES:0")
+
+    def test_invertir_numeros(self):
+        self.assertEqual(procesar_mensaje("INVERTIR: 12345"), "54321")
