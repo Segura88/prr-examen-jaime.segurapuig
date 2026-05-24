@@ -10,3 +10,6 @@ class Test(unittest.TestCase):
 
     def test_invertir_vacio(self):
         self.assertEqual(procesar_mensaje("INVERTIR: "), "")
+
+    def test_comando_desconocido(self):
+        self.assertEqual(procesar_mensaje("DESCONOCIDO: Hola Mundo"), "ERROR")
