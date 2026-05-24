@@ -53,3 +53,7 @@ class Test(unittest.TestCase):
     def test_invertir_en_minusculas(self):
         self.assertEqual(procesar_mensaje("invertir: hola mundo"), "ERROR")
 
+    def test_multiples_dos_puntos(self):
+        self.assertEqual(procesar_mensaje("INVERTIR: a:b:c"), "c:b:a")
+
+
