@@ -34,3 +34,6 @@ class Test(unittest.TestCase):
 
     def test_vocales_sin_vocales(self):
         self.assertEqual(procesar_mensaje("VOCALES: Hll Mnd"), "VOCALES:0")
+
+    def test_vocales_con_mayusculas(self):
+        self.assertEqual(procesar_mensaje("VOCALES: HOLA MUNDO"), "VOCALES:4")
