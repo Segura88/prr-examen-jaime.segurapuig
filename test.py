@@ -59,4 +59,9 @@ class Test(unittest.TestCase):
     def test_unicode(self):
         self.assertEqual(procesar_mensaje("INVERTIR: こんにちは"), "はちにんこ")
 
+    def test_frase_larga(self):
+        frase = "La rápida programación en red es fundamental"
+        esperado = frase[::-1].strip()
+        self.assertEqual(procesar_mensaje(f"INVERTIR: {frase}"), esperado)
+
 
