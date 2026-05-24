@@ -40,3 +40,6 @@ class Test(unittest.TestCase):
 
     def test_vocales_con_espacios(self):
         self.assertEqual(procesar_mensaje("VOCALES:   HOLA MUNDO   "), "VOCALES:4")
+
+    def test_vocales_vacio(self):
+        self.assertEqual(procesar_mensaje("VOCALES: "), "VOCALES:0")
