@@ -1,5 +1,6 @@
 # servidor.py
 import socket
+import sys
 from logica import procesar_mensaje 
 
 HOST = "0.0.0.0"
@@ -30,6 +31,9 @@ def main():
                     continue
 
                 texto = linea.decode("utf-8", errors="replace").rstrip("\n")
+
+                # Imprimir en stderr: dirección IP del cliente y mensaje recibido
+                print(f"[{addr[0]}] Mensaje: {texto}", file=sys.stderr)
 
                 # Procesamos con nuestra lógica aislada
                 respuesta_texto = procesar_mensaje(texto)
