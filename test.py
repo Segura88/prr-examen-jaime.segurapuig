@@ -64,4 +64,7 @@ class Test(unittest.TestCase):
         esperado = frase[::-1].strip()
         self.assertEqual(procesar_mensaje(f"INVERTIR: {frase}"), esperado)
 
+    def test_vocales_acentuadas(self):
+        self.assertEqual(procesar_mensaje("VOCALES: áéíóú ÁÉÍÓÚ"), "VOCALES:10")
+
 
