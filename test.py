@@ -28,4 +28,6 @@ class Test(unittest.TestCase):
 
     def test_none(self):
         self.assertEqual(procesar_mensaje(None), "ERROR")
-        
+
+    def test_vocales(self):
+        self.assertEqual(procesar_mensaje("VOCALES: Hola Mundo"), "VOCALES:4")
