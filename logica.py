@@ -8,7 +8,7 @@ def procesar_mensaje(mensaje):
     if comando == "INVERTIR":
         return partes[1].strip()[::-1]
     elif comando == "VOCALES":
-        vocales = "aeiouAEIOU"
+        vocales = "aeiouAEIOU" + "áéíóúÁÉÍÓÚ"
         contador = sum(1 for char in partes[1] if char in vocales)
         return f"VOCALES:{contador}"
     else:
