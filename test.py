@@ -56,4 +56,7 @@ class Test(unittest.TestCase):
     def test_multiples_dos_puntos(self):
         self.assertEqual(procesar_mensaje("INVERTIR: a:b:c"), "c:b:a")
 
+    def test_unicode(self):
+        self.assertEqual(procesar_mensaje("INVERTIR: こんにちは"), "はちにんこ")
+
 
