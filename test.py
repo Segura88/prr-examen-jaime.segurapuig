@@ -22,3 +22,6 @@ class Test(unittest.TestCase):
 
     def test_cadena_sin_comando(self):
         self.assertEqual(procesar_mensaje(": Hola Mundo"), "ERROR")
+
+    def test_numero_en_vez_de_cadena(self):
+        self.assertEqual(procesar_mensaje(12345), "ERROR")
