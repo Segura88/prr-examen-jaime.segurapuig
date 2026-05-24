@@ -31,3 +31,6 @@ class Test(unittest.TestCase):
 
     def test_vocales(self):
         self.assertEqual(procesar_mensaje("VOCALES: Hola Mundo"), "VOCALES:4")
+
+    def test_vocales_sin_vocales(self):
+        self.assertEqual(procesar_mensaje("VOCALES: Hll Mnd"), "VOCALES:0")
