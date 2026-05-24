@@ -16,3 +16,6 @@ class Test(unittest.TestCase):
 
     def test_comando_sin_parametros(self):
         self.assertEqual(procesar_mensaje("INVERTIR"), "ERROR")
+
+    def test_cadena_vacia(self):
+        self.assertEqual(procesar_mensaje(""), "ERROR")
