@@ -1,4 +1,6 @@
 def procesar_mensaje(mensaje):
+    if not isinstance(mensaje, str):
+        return "ERROR"
     partes = mensaje.split(":", 1)
     if len(partes) != 2:
         return "ERROR"
