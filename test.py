@@ -46,3 +46,7 @@ class Test(unittest.TestCase):
 
     def test_invertir_numeros(self):
         self.assertEqual(procesar_mensaje("INVERTIR: 12345"), "54321")
+
+    def test_invertir_caracteres_especiales(self):
+        self.assertEqual(procesar_mensaje("INVERTIR: !@#$%"), "%$#@!")
+
