@@ -13,3 +13,6 @@ class Test(unittest.TestCase):
 
     def test_comando_desconocido(self):
         self.assertEqual(procesar_mensaje("DESCONOCIDO: Hola Mundo"), "ERROR")
+
+    def test_comando_sin_parametros(self):
+        self.assertEqual(procesar_mensaje("INVERTIR"), "ERROR")
